@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Form</title>
+</head>
+<body>
+
+<form id="custom-google-form" method="POST" target="no-target">
+  <input id="input-name" placeholder="Name" name="entry.1627849063">
+  <input id="input-email" placeholder="Email" name="emailAddress">
+  <textarea id="input-msg" placeholder="Message" name="entry.413218491"></textarea>
+
+  <button id="form-submit" type="submit">SUBMIT</button>
+</form>
+
+<iframe src="#" id="no-target" name="no-target" style="display: none; visibility: hidden;"></iframe>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+  $('#custom-google-form').one('submit', function () {
+    let baseURL = 'https://docs.google.com/forms/d/e/1FAIpQLSfTw7eBOiJonuldhnrlNTuTj-jpt4HBEd2PNJA4DY1et6EAcg/formResponse?submit=Submit'
+    $(this)[0].action = baseURL
+  })
+</script>
+</body>
+</html>
